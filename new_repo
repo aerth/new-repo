@@ -7,6 +7,7 @@
 
 
 # STEP ONE: VISIT https://github.com/settings/tokens and create a token.
+AUTHTOKEN=CHANGEME
 
 curl -H "Authorization: token $AUTHTOKEN" https://api.github.com/user/repos -d '{"name": "'"$1"'"}'
 
