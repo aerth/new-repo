@@ -1,0 +1,11 @@
+#!/bin/bash
+# Purpose: Create github repo with API on CLI
+# Author: aerth <aerth@isupon.us>
+# Note : The script must run in the basedir of new repo.
+# Last updated on : Aug 27 2015
+# -----------------------------------------------
+
+AUTHTOKEN=CHANGEME
+
+curl -H "Authorization: token $AUTHTOKEN" https://api.github.com/user/repos -d '{"name": "'"$1"'"}'
+
