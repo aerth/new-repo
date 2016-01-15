@@ -2,12 +2,17 @@
 # Purpose: Create github repo with API on CLI
 # Author: aerth <aerth@isupon.us>
 # Note : The script must run in the basedir of new repo.
-# Last updated on : Aug 27 2015
+# Last updated on : Jan 15 2016
 # -----------------------------------------------
 
-
+if [ -z "$1" ]; then
+    echo "Usage:"
+    echo "$0 [NEW_REPO_NAME]"
+    exit 0
+fi
 # STEP ONE: VISIT https://github.com/settings/tokens and create a token.
 AUTHTOKEN=CHANGEME
 
+# STEP TWO:
 curl -H "Authorization: token $AUTHTOKEN" https://api.github.com/user/repos -d '{"name": "'"$1"'"}'
 
