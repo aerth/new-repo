@@ -13,6 +13,12 @@ fi
 # STEP ONE: VISIT https://github.com/settings/tokens and create a token.
 AUTHTOKEN=CHANGEME
 
+if [ "$AUTHOKEN"="CHANGEME" ]; then
+    echo "You didnt read the script."
+    sleep 1
+    cat $0
+    exit 0
+fi
 # STEP TWO:
 curl -H "Authorization: token $AUTHTOKEN" https://api.github.com/user/repos -d '{"name": "'"$1"'"}'
 
